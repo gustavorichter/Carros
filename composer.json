@@ -1,0 +1,8 @@
+{
+    "name":"wdev/carros",
+    "autoload":{
+        "psr-4":{
+            "App\\":"app/"
+        }
+    }
+}
