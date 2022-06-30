@@ -7,7 +7,6 @@ use \PDO;
 
 class Carro
 {
-
 	/**
 	 * @var integer
 	 */
@@ -126,7 +125,6 @@ class Carro
 	 * @param strinf
 	 * @return integer
 	 */
-
 	public static function getQuantidadeCarros($where = null){
 		return (new Database('carros'))->select($where,null,null,'COUNT(*) as qtd')
 			->fetchObject()

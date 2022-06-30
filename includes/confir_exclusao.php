@@ -1,4 +1,4 @@
-<main>
+<main class="container">
 
 	<h2 class="mt-3">Remover carro</h2>
 

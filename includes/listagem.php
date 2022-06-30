@@ -14,7 +14,7 @@ if (isset($_GET['status'])) {
 }
 
 $resultados = '';
-	foreach ($carros as $carro) {
+foreach ($carros as $carro) {
 	$resultados .= '<tr>
 					<td>' . $carro->id . '</td>
 					<td>' . $carro->descricao . '</td>
@@ -29,37 +29,37 @@ $resultados = '';
 				</a>
 		 	</td>
 		</tr>';
-	}
+}
 
-		$resultados = strlen($resultados) ? $resultados : '<tr>
+$resultados = strlen($resultados) ? $resultados : '<tr>
 			<td colspan="6" class="text-center">
 				Nenhum carro encontrado
 			</td>
 		</tr>';
 
-	/*$paginas = $obPagination->getPages();
+/*$paginas = $obPagination->getPages();
 	echo "<pre>";
 	print_r($paginas);
 	echo "</pre>"; exit;
 	*/
 
-	//Gets da url
-	unset($_GET['status']);
-	unset($_GET['pagina']);
-	$gets = http_build_query($_GET);
+//Gets da url
+unset($_GET['status']);
+unset($_GET['pagina']);
+$gets = http_build_query($_GET);
 
-	//Paginação
-	$paginacao = '';
-	$paginas = $obPagination->getPages();
-	foreach($paginas as $key=>$pagina) {
-		$class = $pagina['atual'] ? 'btn-primary' : 'btn-dark';
-		$paginacao .= '<a href="?pagina='.$pagina['pagina'].'&'.$gets.'">
-			<button type="button" class="btn '.$class.'">'.$pagina['pagina'].'</button>
+//Paginação
+$paginacao = '';
+$paginas = $obPagination->getPages();
+foreach ($paginas as $key => $pagina) {
+	$class = $pagina['atual'] ? 'btn-primary' : 'btn-dark';
+	$paginacao .= '<a href="?pagina=' . $pagina['pagina'] . '&' . $gets . '">
+			<button type="button" class="btn ' . $class . '">' . $pagina['pagina'] . '</button>
 		</a>';
-	}
+}
 
 ?>
-<main>
+<main class="container">
 
 	<?= $mensagem ?>
 
@@ -75,7 +75,7 @@ $resultados = '';
 			<div class="row my-3">
 				<div class="col">
 					<label>Buscar carro</label>
-					<input type="text" name="filtro" class="form-control" value="<?=$filtro?>">
+					<input type="text" name="filtro" class="form-control" value="<?= $filtro ?>">
 				</div>
 
 				<div class="col d-flex align-items-end">
