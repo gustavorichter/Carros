@@ -53,7 +53,7 @@ $resultados = '';
 	$paginas = $obPagination->getPages();
 	foreach($paginas as $key=>$pagina) {
 		$class = $pagina['atual'] ? 'btn-primary' : 'btn-dark';
-		$paginacao .= '<a href"?pagina='.$pagina['pagina'].'&'.$gets.'">
+		$paginacao .= '<a href="?pagina='.$pagina['pagina'].'&'.$gets.'">
 			<button type="button" class="btn '.$class.'">'.$pagina['pagina'].'</button>
 		</a>';
 	}
